@@ -80,6 +80,10 @@ inputs:
       colorful-menu-nvim
       satellite-nvim
       nvim-surround
+      fidget-nvim
+      mini-clue
+      nvim-web-devicons
+      gitsigns-nvim
       nvim-autopairs
       mini-files
       (pkgs.vimUtils.buildVimPlugin {
