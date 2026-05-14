@@ -45,6 +45,12 @@ inputs:
         src = inputs.plugins-blink-lib;
       })
       colorful-menu-nvim
+      mini-files
+      (pkgs.vimUtils.buildVimPlugin {
+        pname = "tiny-cmdline-nvim";
+        version = "latest";
+        src = inputs.plugins-tiny-cmdline;
+      })
     ];
   };
 

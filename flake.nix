@@ -13,6 +13,11 @@
     flake = false;
   };
 
+  inputs.plugins-tiny-cmdline = {
+    url = "github:rachartier/tiny-cmdline.nvim";
+    flake = false;
+  };
+
   outputs = {
     self,
     nixpkgs,

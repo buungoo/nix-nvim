@@ -1,7 +1,7 @@
 return {
   "blink.cmp",
   category = "core",
-  event = "InsertEnter",
+  event = { "InsertEnter", "CmdlineEnter" },
   before = function()
     vim.cmd.packadd("colorful-menu.nvim")
   end,
@@ -76,6 +76,16 @@ return {
         },
         window = {
           border = "rounded",
+        },
+      },
+
+      cmdline = {
+        enabled = true,
+        completion = {
+          menu = {
+            auto_show = true,
+            direction_priority = { "s", "n" },
+          },
         },
       },
 

@@ -74,11 +74,28 @@
         "type": "github"
       }
     },
+    "plugins-tiny-cmdline": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1775905242,
+        "narHash": "sha256-tD1DrY4mpPf5Qo9jZEBqSxOOqzk2Ssl1srH4mu+cN5g=",
+        "owner": "rachartier",
+        "repo": "tiny-cmdline.nvim",
+        "rev": "ad58747b955d0743ccfd56e97da1a4c1fac89f58",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rachartier",
+        "repo": "tiny-cmdline.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "blink-cmp": "blink-cmp",
         "nixpkgs": "nixpkgs",
         "plugins-blink-lib": "plugins-blink-lib",
+        "plugins-tiny-cmdline": "plugins-tiny-cmdline",
         "wrappers": "wrappers"
       }
     },
