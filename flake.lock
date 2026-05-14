@@ -74,6 +74,22 @@
         "type": "github"
       }
     },
+    "plugins-line-number-change-mode": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1729012619,
+        "narHash": "sha256-5oesT8HB+N4AWfXt9+l/5nrxlhCoEgfcUKk4Jm2U8Fk=",
+        "owner": "sethen",
+        "repo": "line-number-change-mode.nvim",
+        "rev": "0237ad6bd85c5872df66e2e98d7bba27c906382e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sethen",
+        "repo": "line-number-change-mode.nvim",
+        "type": "github"
+      }
+    },
     "plugins-nvim-window": {
       "flake": false,
       "locked": {
@@ -111,6 +127,7 @@
         "blink-cmp": "blink-cmp",
         "nixpkgs": "nixpkgs",
         "plugins-blink-lib": "plugins-blink-lib",
+        "plugins-line-number-change-mode": "plugins-line-number-change-mode",
         "plugins-nvim-window": "plugins-nvim-window",
         "plugins-tiny-cmdline": "plugins-tiny-cmdline",
         "wrappers": "wrappers"

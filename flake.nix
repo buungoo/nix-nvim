@@ -23,6 +23,11 @@
     flake = false;
   };
 
+  inputs.plugins-line-number-change-mode = {
+    url = "github:sethen/line-number-change-mode.nvim";
+    flake = false;
+  };
+
   outputs = {
     self,
     nixpkgs,

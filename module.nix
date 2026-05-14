@@ -61,7 +61,15 @@ inputs:
       flash-nvim
       fzf-lua
       nvim-lspconfig
-      nvim-treesitter.withAllGrammars
+      # nvim-treesitter.withAllGrammars # Or ↓ (This does the same thing but doesn't pull in nvim-treesitter [archived])
+      (pkgs.vimUtils.buildVimPlugin {
+        pname = "treesitter-grammars";
+        version = "latest";
+        src = pkgs.symlinkJoin {
+          name = "treesitter-grammars";
+          paths = pkgs.vimPlugins.nvim-treesitter.allGrammars;
+        };
+      })
       lazydev-nvim
       inputs.blink-cmp.packages.${pkgs.system}.blink-cmp
       (pkgs.vimUtils.buildVimPlugin {
@@ -70,6 +78,9 @@ inputs:
         src = inputs.plugins-blink-lib;
       })
       colorful-menu-nvim
+      satellite-nvim
+      nvim-surround
+      nvim-autopairs
       mini-files
       (pkgs.vimUtils.buildVimPlugin {
         pname = "tiny-cmdline-nvim";
@@ -80,6 +91,11 @@ inputs:
         pname = "nvim-window";
         version = "latest";
         src = inputs.plugins-nvim-window;
+      })
+      (pkgs.vimUtils.buildVimPlugin {
+        pname = "line-number-change-mode-nvim";
+        version = "latest";
+        src = inputs.plugins-line-number-change-mode;
       })
     ];
   };

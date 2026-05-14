@@ -14,4 +14,11 @@ M.picker_border = palette.roninYellow --.sumiInk4
 M.picker_header = palette.springGreen
 M.picker_info = palette.waveAqua2
 
+M.line_nr = palette.roninYellow
+M.line_nr_bg = palette.sumiInk6
+M.mode_insert = palette.dragonPink
+M.mode_visual = palette.waveAqua2
+M.mode_vline = palette.waveAqua1
+M.mode_replace = palette.autumnRed
+
 return M
