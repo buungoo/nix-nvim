@@ -65,9 +65,9 @@
       system: let
         pkgs = import nixpkgs {inherit system;};
       in {
-        neovim = self.wrappers.neovim.wrap {inherit pkgs;};
-        neovim-full = self.wrappers.neovim-full.wrap {inherit pkgs;};
-        default = self.packages.${system}.neovim;
+        nvim = self.wrappers.neovim.wrap {inherit pkgs;};
+        nvimf = self.wrappers.neovim-full.wrap {inherit pkgs;};
+        default = self.packages.${system}.nvim;
       }
     );
     nixosModules = {
