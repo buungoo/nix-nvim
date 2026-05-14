@@ -105,6 +105,18 @@
         path = ./templates/lua;
         description = "Lua dev shell with lua-language-server and stylua";
       };
+      cpp = {
+        path = ./templates/cpp;
+        description = "C/C++ dev shell with clangd and clang-tools";
+      };
+      csharp = {
+        path = ./templates/csharp;
+        description = "C# dev shell with omnisharp-roslyn and dotnet SDK";
+      };
+      js = {
+        path = ./templates/js;
+        description = "JS/TS dev shell with typescript-language-server and prettier";
+      };
     };
   };
 }

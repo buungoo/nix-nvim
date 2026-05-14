@@ -83,6 +83,7 @@ inputs:
       fidget-nvim
       mini-clue
       nvim-web-devicons
+      conform-nvim
       gitsigns-nvim
       nvim-autopairs
       mini-files
