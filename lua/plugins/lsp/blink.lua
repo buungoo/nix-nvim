@@ -82,6 +82,12 @@ return {
       cmdline = {
         enabled = true,
         completion = {
+          list = {
+            selection = {
+              preselect = false,
+              auto_insert = true,
+            },
+          },
           menu = {
             auto_show = true,
             direction_priority = { "s", "n" },
