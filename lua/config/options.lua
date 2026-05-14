@@ -33,5 +33,7 @@ vim.o.termguicolors = true
 
 vim.o.clipboard = 'unnamedplus'
 
-vim.g.netrw_liststyle = 0
-vim.g.netrw_banner = 0
+-- Disable built-in plugins
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_tutor = 1

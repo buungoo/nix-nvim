@@ -18,6 +18,11 @@
     flake = false;
   };
 
+  inputs.plugins-nvim-window = {
+    url = "gitlab:yorickpeterse/nvim-window";
+    flake = false;
+  };
+
   outputs = {
     self,
     nixpkgs,

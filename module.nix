@@ -76,6 +76,11 @@ inputs:
         version = "latest";
         src = inputs.plugins-tiny-cmdline;
       })
+      (pkgs.vimUtils.buildVimPlugin {
+        pname = "nvim-window";
+        version = "latest";
+        src = inputs.plugins-nvim-window;
+      })
     ];
   };
 
