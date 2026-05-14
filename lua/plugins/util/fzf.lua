@@ -8,9 +8,10 @@ return {
     { "<leader>sb", function() require("fzf-lua").buffers() end, desc = "Find Buffers" },
   },
   after = function()
-    local c = require('config.colors')
+    local c = require('plugins.ui.themes.palette')
 
     vim.api.nvim_set_hl(0, "FzfLuaBorder", { fg = c.picker_border })
+    vim.api.nvim_set_hl(0, "FzfLuaPreviewBorder", { fg = c.picker_preview_border })
     vim.api.nvim_set_hl(0, "FzfLuaTitle", { fg = c.picker_header, bold = true })
     vim.api.nvim_set_hl(0, "FzfLuaHeaderText", { fg = c.picker_header })
     vim.api.nvim_set_hl(0, "FzfLuaFzfMatch", { fg = c.picker_match, bold = true })
@@ -25,9 +26,12 @@ return {
       },
       winopts = {
         fullscreen = true,
+        border = "rounded",
         preview = {
           layout = "vertical",
           vertical = "up:60%",
+          border = "rounded",
+          scrollbar = false,
         },
       },
     })

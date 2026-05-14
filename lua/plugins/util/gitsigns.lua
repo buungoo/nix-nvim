@@ -3,8 +3,6 @@ return {
   category = "core",
   event = "BufReadPost",
   after = function()
-    local c = require('config.colors')
-
     require('gitsigns').setup({
       signs = {
         add = { text = '+' },

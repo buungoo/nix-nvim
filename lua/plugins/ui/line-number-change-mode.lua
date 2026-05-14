@@ -6,7 +6,7 @@ return {
     vim.cmd.packadd("kanagawa.nvim")
   end,
   after = function()
-    local c = require('config.colors')
+    local c = require('plugins.ui.themes.palette')
 
     require("line-number-change-mode").setup({
       mode = {

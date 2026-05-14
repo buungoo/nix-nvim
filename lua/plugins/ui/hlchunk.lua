@@ -3,7 +3,7 @@ return {
   category = "core",
   event = "DeferredUIEnter",
   after = function()
-    local c = require('config.colors')
+    local c = require('plugins.ui.themes.palette')
 
     require('hlchunk').setup({
       chunk = {
