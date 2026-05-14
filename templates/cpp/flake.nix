@@ -15,6 +15,7 @@
             clang-tools # clangd + clang-format
             cmake
             gnumake
+            vscode-extensions.vadimcn.vscode-lldb.adapter # codelldb
           ];
         };
       }

@@ -102,6 +102,9 @@ inputs:
         version = "latest";
         src = inputs.plugins-line-number-change-mode;
       })
+      nvim-dap
+      nvim-dap-ui
+      nvim-nio
     ];
   };
 

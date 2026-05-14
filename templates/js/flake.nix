@@ -15,6 +15,7 @@
             nodejs
             nodePackages.typescript-language-server
             nodePackages.prettier
+            vscode-js-debug # js-debug-adapter
           ];
         };
       }
