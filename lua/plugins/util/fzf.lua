@@ -4,7 +4,8 @@ return {
   event = "DeferredUIEnter",
   keys = {
     { "<leader>sf", function() require("fzf-lua").files() end, desc = "Find Files" },
-    { "<leader>sg", function() require("fzf-lua").live_grep({ rg_opts = "--column --line-number --no-heading --color=always --smart-case -e" }) end, desc = "Grep Files" },
+    { "<leader>sF", function() require("fzf-lua").files({ cwd = vim.fn.expand("%:p:h") }) end, desc = "Find Files (current dir)" },
+    { "<leader>sg", function() require("fzf-lua").grep({ search = "", rg_opts = "--column --line-number --no-heading --color=always --smart-case -e" }) end, desc = "Grep Files" },
     { "<leader>sb", function() require("fzf-lua").buffers() end, desc = "Find Buffers" },
     { "<leader>sd", function()
       require("fzf-lua").fzf_exec("find . -type d -not -path '*/.*'", {
