@@ -4,7 +4,7 @@ return {
   event = "DeferredUIEnter",
   keys = {
     { "<leader>sf", function() require("fzf-lua").files() end, desc = "Find Files" },
-    { "<leader>sg", function() require("fzf-lua").live_grep() end, desc = "Grep Files" },
+    { "<leader>sg", function() require("fzf-lua").live_grep({ rg_opts = "--column --line-number --no-heading --color=always --smart-case -e" }) end, desc = "Grep Files" },
     { "<leader>sb", function() require("fzf-lua").buffers() end, desc = "Find Buffers" },
   },
   after = function()
