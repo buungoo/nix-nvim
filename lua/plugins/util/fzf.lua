@@ -6,6 +6,16 @@ return {
     { "<leader>sf", function() require("fzf-lua").files() end, desc = "Find Files" },
     { "<leader>sg", function() require("fzf-lua").live_grep({ rg_opts = "--column --line-number --no-heading --color=always --smart-case -e" }) end, desc = "Grep Files" },
     { "<leader>sb", function() require("fzf-lua").buffers() end, desc = "Find Buffers" },
+    { "<leader>sd", function()
+      require("fzf-lua").fzf_exec("find . -type d -not -path '*/.*'", {
+        prompt = "Directories> ",
+        actions = {
+          ["default"] = function(selected)
+            require("mini.files").open(selected[1], true)
+          end,
+        },
+      })
+    end, desc = "Find Directory" },
   },
   after = function()
     local c = require('plugins.ui.themes.palette')
