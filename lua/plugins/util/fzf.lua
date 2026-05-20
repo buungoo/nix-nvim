@@ -34,7 +34,7 @@ return {
       fzf_bin = "sk",
       files = {
         hidden = true,
-        fd_opts = "--type f --hidden --exclude .git --exclude node_modules --exclude '*.o' --exclude '*.so' --exclude '*.dylib' --exclude '*.a' --exclude '*.dll' --exclude '*.exe' --exclude '*.bin' --exclude '*.pdf' --exclude '*.zip' --exclude '*.tar' --exclude '*.gz'",
+        cmd = "fd --type f --hidden --exclude .git --exclude node_modules -E '*.o' -E '*.so' -E '*.dylib' -E '*.a' -E '*.dll' -E '*.exe' -E '*.bin' -E '*.pdf' -E '*.zip' -E '*.tar' -E '*.gz'",
       },
       winopts = {
         fullscreen = true,
