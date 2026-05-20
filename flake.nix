@@ -40,10 +40,19 @@
     fullModule = {pkgs, ...}: {
       imports = [module];
       extraPackages = with pkgs; [
+        # Nix
         nixd
         alejandra
+        # Lua
         lua-language-server
         stylua
+        # C/C++
+        clang-tools
+        # C#
+        roslyn-ls
+        # JS/TS
+        nodePackages.typescript-language-server
+        nodePackages.prettier
       ];
     };
     fullWrapper = wrappers.lib.evalModule fullModule;
@@ -66,7 +75,7 @@
         pkgs = import nixpkgs {inherit system;};
       in {
         nvim = self.wrappers.neovim.wrap {inherit pkgs;};
-        nvimf = self.wrappers.neovim-full.wrap {inherit pkgs;};
+        fvim = self.wrappers.neovim-full.wrap {inherit pkgs;};
         default = self.packages.${system}.nvim;
       }
     );

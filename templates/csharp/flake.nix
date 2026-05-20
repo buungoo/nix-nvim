@@ -13,8 +13,7 @@
         default = pkgs.mkShell {
           packages = with pkgs; [
             dotnet-sdk
-            # roslyn-ls # Microsoft's Roslyn LSP (alternative to omnisharp)
-            omnisharp-roslyn
+            roslyn-ls
           ];
         };
       }

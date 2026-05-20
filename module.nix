@@ -102,6 +102,7 @@ inputs:
         version = "latest";
         src = inputs.plugins-line-number-change-mode;
       })
+      markdown-preview-nvim
     ];
   };
 
