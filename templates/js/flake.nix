@@ -13,8 +13,8 @@
         default = pkgs.mkShell {
           packages = with pkgs; [
             nodejs
-            nodePackages.typescript-language-server
-            nodePackages.prettier
+            typescript-language-server
+            prettier
           ];
         };
       }
