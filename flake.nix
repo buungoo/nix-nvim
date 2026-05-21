@@ -51,8 +51,8 @@
         # C#
         roslyn-ls
         # JS/TS
-        nodePackages.typescript-language-server
-        nodePackages.prettier
+        typescript-language-server
+        prettier
       ];
     };
     fullWrapper = wrappers.lib.evalModule fullModule;
