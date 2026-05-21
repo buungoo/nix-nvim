@@ -3,20 +3,25 @@ return {
   category = "core",
   event = "DeferredUIEnter",
   keys = {
-    { "<leader>sf", function() require("fzf-lua").files() end, desc = "Find Files" },
-    { "<leader>sF", function() require("fzf-lua").files({ cwd = vim.fn.expand("%:p:h") }) end, desc = "Find Files (current dir)" },
-    { "<leader>sg", function() require("fzf-lua").grep({ search = "", rg_opts = "--column --line-number --no-heading --color=always --smart-case -e" }) end, desc = "Grep Files" },
-    { "<leader>sb", function() require("fzf-lua").buffers() end, desc = "Find Buffers" },
-    { "<leader>sd", function()
-      require("fzf-lua").fzf_exec("find . -type d -not -path '*/.*'", {
-        prompt = "Directories> ",
-        actions = {
-          ["default"] = function(selected)
-            require("mini.files").open(selected[1], true)
-          end,
-        },
-      })
-    end, desc = "Find Directory" },
+    { "<leader>sf", function() require("fzf-lua").files() end,                                                                                               desc = "Find Files" },
+    { "<leader>sF", function() require("fzf-lua").files({ cwd = vim.fn.expand("%:p:h") }) end,                                                               desc = "Find Files (current dir)" },
+    { "<leader>sg", function() require("fzf-lua").grep({ search = "", rg_opts =
+      "--column --line-number --no-heading --color=always --smart-case -e" }) end,                                                                           desc = "Grep Files" },
+    { "<leader>sb", function() require("fzf-lua").buffers() end,                                                                                             desc = "Find Buffers" },
+    {
+      "<leader>sd",
+      function()
+        require("fzf-lua").fzf_exec("find . -type d -not -path '*/.*'", {
+          prompt = "Directories> ",
+          actions = {
+            ["default"] = function(selected)
+              require("mini.files").open(selected[1], true)
+            end,
+          },
+        })
+      end,
+      desc = "Find Directory"
+    },
   },
   after = function()
     local c = require('plugins.ui.themes.palette')
@@ -34,7 +39,12 @@ return {
       fzf_bin = "sk",
       files = {
         hidden = true,
-        cmd = "fd --type f --hidden --exclude .git --exclude node_modules -E '*.o' -E '*.so' -E '*.dylib' -E '*.a' -E '*.dll' -E '*.exe' -E '*.bin' -E '*.pdf' -E '*.zip' -E '*.tar' -E '*.gz'",
+        file_ignore_patterns = {
+          "%.o$", "%.so$", "%.dylib$", "%.a$", "%.dll$",
+          "%.exe$", "%.bin$", "%.pdf$", "%.zip$",
+          "%.tar$", "%.gz$",
+          "/%.git/", "/node_modules/",
+        },
       },
       winopts = {
         fullscreen = true,
