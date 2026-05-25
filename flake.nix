@@ -53,6 +53,8 @@
         # JS/TS
         typescript-language-server
         prettier
+        # Python
+        pyrefly
       ];
     };
     fullWrapper = wrappers.lib.evalModule fullModule;
@@ -125,6 +127,10 @@
       js = {
         path = ./templates/js;
         description = "JS/TS dev shell with typescript-language-server and prettier";
+      };
+      python = {
+        path = ./templates/python;
+        description = "Python dev shell with pyrefly";
       };
     };
   };
