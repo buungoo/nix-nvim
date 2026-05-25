@@ -55,6 +55,7 @@
         prettier
         # Python
         pyrefly
+        ruff
       ];
     };
     fullWrapper = wrappers.lib.evalModule fullModule;
