@@ -33,7 +33,7 @@
     nixpkgs,
     wrappers,
     ...
-  } @inputs: let
+  } @ inputs: let
     forAllSystems = nixpkgs.lib.genAttrs nixpkgs.lib.platforms.all;
     module = nixpkgs.lib.modules.importApply ./module.nix inputs;
     wrapper = wrappers.lib.evalModule module;
@@ -56,6 +56,8 @@
         # Python
         pyrefly
         ruff
+        # Rust
+        rust-analyzer
       ];
     };
     fullWrapper = wrappers.lib.evalModule fullModule;
@@ -132,6 +134,10 @@
       python = {
         path = ./templates/python;
         description = "Python dev shell with pyrefly";
+      };
+      rust = {
+        path = ./templates/rust;
+        description = "Rust dev shell with rust-analyzer";
       };
     };
   };
