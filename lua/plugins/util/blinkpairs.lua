@@ -1,5 +1,5 @@
 return {
-  "blink-pairs",
+  "blink.pairs",
   category = "core",
   event = "InsertEnter",
   after = function()

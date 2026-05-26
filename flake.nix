@@ -13,10 +13,8 @@
     flake = false;
   };
 
-  inputs.plugins-blink-pairs = {
-    url = "github:Saghen/blink.pairs";
-    flake = false;
-  };
+  inputs.blink-pairs.url = "github:Saghen/blink.pairs";
+  inputs.blink-pairs.inputs.nixpkgs.follows = "nixpkgs";
 
   inputs.plugins-tiny-cmdline = {
     url = "github:rachartier/tiny-cmdline.nvim";

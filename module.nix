@@ -80,12 +80,7 @@ inputs:
       nvim-web-devicons
       conform-nvim
       gitsigns-nvim
-      (pkgs.vimUtils.buildVimPlugin {
-        pname = "blink-pairs";
-        version = "latest";
-        src = inputs.plugins-blink-pairs;
-        doCheck = false;
-      })
+      inputs.blink-pairs.packages.${pkgs.system}.blink-pairs
       mini-files
       (pkgs.vimUtils.buildVimPlugin {
         pname = "tiny-cmdline-nvim";

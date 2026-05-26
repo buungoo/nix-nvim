@@ -90,7 +90,6 @@ return {
           },
           menu = {
             auto_show = true,
-            direction_priority = { "s", "n" },
           },
         },
       },
