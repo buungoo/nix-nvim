@@ -1,7 +1,7 @@
 return {
   "hlchunk.nvim",
   category = "core",
-  event = "DeferredUIEnter",
+  event = "BufReadPost",
   after = function()
     local c = require('plugins.ui.themes.palette')
 

@@ -4,7 +4,7 @@ return {
   on_require = "mini.files",
   keys = {
     { "-", function() require('mini.files').open(vim.api.nvim_buf_get_name(0), true) end, mode = { "n" }, desc = 'Open parent directory' },
-    { "<leader>-", function() require('mini.files').open(vim.fn.getcwd(), true) end, mode = { "n" }, desc = 'Open cwd' },
+    { "_", function() require('mini.files').open(vim.fn.getcwd(), true) end, mode = { "n" }, desc = 'Open cwd' },
   },
   after = function()
     local MiniFiles = require('mini.files')

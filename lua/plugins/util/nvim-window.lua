@@ -6,7 +6,8 @@ return {
   },
   after = function()
     require('nvim-window').setup {
-      chars = { 'a', 's', 'd', 'f', 'j', 'k', 'l', 'h', 'g' },
+      -- NOTE: The order matters. Key at index 0 will be window 0, etc.
+      chars = { 'j', 'f', 'k', 'd', 'l', 's', 'ö', 'a', },
       normal_hl = 'Normal',
       hint_hl = 'Bold',
       border = 'single',

@@ -1,5 +1,16 @@
+-- Possible additions?:
+-- https://github.com/hasansujon786/nvim-navbuddy
+
 -- Collect all plugin specs from lua/plugins/ recursively.
 -- Each file should return a single lze spec table.
+--
+-- Loading laziness (early → late):
+--   VimEnter          - UI is ready, before any file is displayed
+--   DeferredUIEnter   - shortly after UI loads, idle callback
+--   BufReadPost       - a file buffer has been opened and read
+--   InsertEnter       - user enters insert mode
+--   CmdlineEnter      - user opens the command line (:)
+--   keys = {}         - only when the mapped key is pressed
 local function load_specs(dir)
   local specs = {}
   local handle = vim.uv.fs_scandir(dir)

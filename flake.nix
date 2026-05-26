@@ -2,33 +2,34 @@
   description = "Bungos nvim config";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-  inputs.wrappers.url = "github:BirdeeHub/nix-wrapper-modules";
-  inputs.wrappers.inputs.nixpkgs.follows = "nixpkgs";
 
-  inputs.blink-cmp.url = "github:Saghen/blink.cmp";
-  inputs.blink-cmp.inputs.nixpkgs.follows = "nixpkgs";
-
+  inputs.blink-cmp = {
+    url = "github:Saghen/blink.cmp";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+  inputs.blink-pairs = {
+    url = "github:Saghen/blink.pairs";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
   inputs.plugins-blink-lib = {
     url = "github:Saghen/blink.lib";
     flake = false;
   };
-
-  inputs.blink-pairs.url = "github:Saghen/blink.pairs";
-  inputs.blink-pairs.inputs.nixpkgs.follows = "nixpkgs";
-
-  inputs.plugins-tiny-cmdline = {
-    url = "github:rachartier/tiny-cmdline.nvim";
+  inputs.plugins-line-number-change-mode = {
+    url = "github:sethen/line-number-change-mode.nvim";
     flake = false;
   };
-
   inputs.plugins-nvim-window = {
     url = "gitlab:yorickpeterse/nvim-window";
     flake = false;
   };
-
-  inputs.plugins-line-number-change-mode = {
-    url = "github:sethen/line-number-change-mode.nvim";
+  inputs.plugins-tiny-cmdline = {
+    url = "github:rachartier/tiny-cmdline.nvim";
     flake = false;
+  };
+  inputs.wrappers = {
+    url = "github:BirdeeHub/nix-wrapper-modules";
+    inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -120,7 +121,7 @@
       };
       lua = {
         path = ./templates/lua;
-        description = "Lua dev shell with lua-language-server and stylua";
+        description = "Lua dev shell with lua-language-server";
       };
       cpp = {
         path = ./templates/cpp;
@@ -128,7 +129,7 @@
       };
       csharp = {
         path = ./templates/csharp;
-        description = "C# dev shell with omnisharp-roslyn and dotnet SDK";
+        description = "C# dev shell with roslyn-ls and dotnet SDK";
       };
       js = {
         path = ./templates/js;
