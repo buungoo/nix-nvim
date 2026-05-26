@@ -5,8 +5,7 @@ return {
   keys = {
     { "<leader>sf", function() require("fzf-lua").files() end,                                                                                               desc = "Find Files" },
     { "<leader>sF", function() require("fzf-lua").files({ cwd = vim.fn.expand("%:p:h") }) end,                                                               desc = "Find Files (current dir)" },
-    { "<leader>sg", function() require("fzf-lua").grep({ search = "", rg_opts =
-      "--column --line-number --no-heading --color=always --smart-case -e" }) end,                                                                           desc = "Grep Files" },
+    { "<leader>sg", function() require("fzf-lua").live_grep({ rg_glob = true }) end,                                                                          desc = "Grep Files" },
     { "<leader>sb", function() require("fzf-lua").buffers() end,                                                                                             desc = "Find Buffers" },
     {
       "<leader>sd",
@@ -37,6 +36,8 @@ return {
 
     require("fzf-lua").setup({
       fzf_bin = "sk",
+      -- skim regex mode treats '.' as metachar; force fuzzy matching
+      fzf_opts = { ["--tiebreak"] = "score", ["--regex"] = false },
       files = {
         hidden = true,
         file_ignore_patterns = {
