@@ -107,6 +107,7 @@ inputs:
   };
 
   config.extraPackages = with pkgs; [
+    ripgrep
     skim
   ];
 }
