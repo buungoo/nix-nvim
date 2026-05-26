@@ -74,6 +74,22 @@
         "type": "github"
       }
     },
+    "plugins-blink-pairs": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1779214925,
+        "narHash": "sha256-PGY3quaZVbhlCjUBDvoi3I41J8StMsAYAazFpBfAd4g=",
+        "owner": "Saghen",
+        "repo": "blink.pairs",
+        "rev": "7a2e375afbae3b392f5a2ee0b07f829ebb06af40",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Saghen",
+        "repo": "blink.pairs",
+        "type": "github"
+      }
+    },
     "plugins-line-number-change-mode": {
       "flake": false,
       "locked": {
@@ -127,6 +143,7 @@
         "blink-cmp": "blink-cmp",
         "nixpkgs": "nixpkgs",
         "plugins-blink-lib": "plugins-blink-lib",
+        "plugins-blink-pairs": "plugins-blink-pairs",
         "plugins-line-number-change-mode": "plugins-line-number-change-mode",
         "plugins-nvim-window": "plugins-nvim-window",
         "plugins-tiny-cmdline": "plugins-tiny-cmdline",

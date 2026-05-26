@@ -71,12 +71,7 @@ inputs:
         };
       })
       lazydev-nvim
-      inputs.blink-cmp.packages.${pkgs.system}.blink-cmp
-      (pkgs.vimUtils.buildVimPlugin {
-        pname = "blink-lib";
-        version = "latest";
-        src = inputs.plugins-blink-lib;
-      })
+      blink-cmp
       colorful-menu-nvim
       satellite-nvim
       nvim-surround
@@ -85,7 +80,11 @@ inputs:
       nvim-web-devicons
       conform-nvim
       gitsigns-nvim
-      nvim-autopairs
+      (pkgs.vimUtils.buildVimPlugin {
+        pname = "blink-pairs";
+        version = "latest";
+        src = inputs.plugins-blink-pairs;
+      })
       mini-files
       (pkgs.vimUtils.buildVimPlugin {
         pname = "tiny-cmdline-nvim";
