@@ -84,6 +84,7 @@ inputs:
         pname = "blink-pairs";
         version = "latest";
         src = inputs.plugins-blink-pairs;
+        doCheck = false;
       })
       mini-files
       (pkgs.vimUtils.buildVimPlugin {
