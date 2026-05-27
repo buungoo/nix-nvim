@@ -75,15 +75,7 @@ inputs: {
         version = "latest";
         src = inputs.plugins-tiny-cmdline;
       })
-      # nvim-treesitter.withAllGrammars # Or ↓ (This does the same thing but doesn't pull in nvim-treesitter [archived])
-      (pkgs.vimUtils.buildVimPlugin {
-        pname = "treesitter-grammars";
-        version = "latest";
-        src = pkgs.symlinkJoin {
-          name = "treesitter-grammars";
-          paths = pkgs.vimPlugins.nvim-treesitter.allGrammars;
-        };
-      })
+      pkgs.vimPlugins.nvim-treesitter.withAllGrammars
     ];
   };
 

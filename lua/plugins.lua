@@ -8,6 +8,7 @@
 --   VimEnter          - UI is ready, before any file is displayed
 --   DeferredUIEnter   - shortly after UI loads, idle callback
 --   BufReadPost       - a file buffer has been opened and read
+--   BufNewFile        - a named buffer for a file that does not exist yet
 --   InsertEnter       - user enters insert mode
 --   CmdlineEnter      - user opens the command line (:)
 --   keys = {}         - only when the mapped key is pressed
