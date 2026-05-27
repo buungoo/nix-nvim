@@ -5,6 +5,8 @@ vim.opt.hlsearch = true
 vim.opt.inccommand = 'split'
 
 vim.opt.scrolloff = 999
+vim.opt.scrolloffpad = 999
+
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.opt.cursorline = true

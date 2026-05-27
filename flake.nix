@@ -7,6 +7,10 @@
     url = "github:Saghen/blink.cmp";
     inputs.nixpkgs.follows = "nixpkgs";
   };
+  inputs.blink-indent = {
+    url = "github:buungoo/blink.indent";
+    flake = false;
+  };
   inputs.blink-pairs = {
     url = "github:Saghen/blink.pairs";
     inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +30,10 @@
   inputs.plugins-tiny-cmdline = {
     url = "github:rachartier/tiny-cmdline.nvim";
     flake = false;
+  };
+  inputs.neovim-nightly = {
+    url = "github:nix-community/neovim-nightly-overlay";
+    inputs.nixpkgs.follows = "nixpkgs";
   };
   inputs.wrappers = {
     url = "github:BirdeeHub/nix-wrapper-modules";

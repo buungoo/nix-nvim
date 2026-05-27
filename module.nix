@@ -9,7 +9,7 @@ inputs: {
 
   config.settings.config_directory = ./.;
 
-  config.package = import ./package.nix pkgs;
+  config.package = import ./package.nix { inherit pkgs; neovim-nightly = inputs.neovim-nightly; };
 
   config.hosts.node.nvim-host.enable = false;
   config.hosts.python3.nvim-host.enable = false;
@@ -64,9 +64,14 @@ inputs: {
 
       # From non-flake inputs
       (pkgs.vimUtils.buildVimPlugin {
-        pname = "tiny-cmdline-nvim";
+        pname = "blink.indent";
         version = "latest";
-        src = inputs.plugins-tiny-cmdline;
+        src = inputs.blink-indent;
+      })
+      (pkgs.vimUtils.buildVimPlugin {
+        pname = "line-number-change-mode-nvim";
+        version = "latest";
+        src = inputs.plugins-line-number-change-mode;
       })
       (pkgs.vimUtils.buildVimPlugin {
         pname = "nvim-window";
@@ -74,9 +79,9 @@ inputs: {
         src = inputs.plugins-nvim-window;
       })
       (pkgs.vimUtils.buildVimPlugin {
-        pname = "line-number-change-mode-nvim";
+        pname = "tiny-cmdline-nvim";
         version = "latest";
-        src = inputs.plugins-line-number-change-mode;
+        src = inputs.plugins-tiny-cmdline;
       })
     ];
   };

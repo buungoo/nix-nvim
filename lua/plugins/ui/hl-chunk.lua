@@ -1,5 +1,6 @@
 return {
   "hlchunk.nvim",
+  enabled = true,
   category = "core",
   event = "BufReadPost",
   after = function()

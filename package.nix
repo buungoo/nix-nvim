@@ -1,6 +1,6 @@
-# Override neovim-unwrapped to show startup time in the intro screen
-pkgs:
-pkgs.neovim-unwrapped.overrideAttrs (old: {
+# Override neovim nightly to show startup time in the intro screen
+{ pkgs, neovim-nightly }:
+(neovim-nightly.packages.${pkgs.system}.default).overrideAttrs (old: {
   doCheck = false;
   postPatch =
     (old.postPatch or "")
