@@ -41,26 +41,18 @@ inputs: {
       gitsigns-nvim
       hlchunk-nvim
       incline-nvim
-      inputs.blink-pairs.packages.${pkgs.system}.blink-pairs
+      # inputs.blink-pairs.packages.${pkgs.system}.blink-pairs # disabled: crates.io blocking nix fetches
       kanagawa-nvim
       lazydev-nvim
       markdown-preview-nvim
       mini-clue
-      mini-statusline
       mini-files
+      mini-statusline
       nvim-lspconfig
       nvim-surround
-      # nvim-treesitter.withAllGrammars # Or ↓ (This does the same thing but doesn't pull in nvim-treesitter [archived])
-      (pkgs.vimUtils.buildVimPlugin {
-        pname = "treesitter-grammars";
-        version = "latest";
-        src = pkgs.symlinkJoin {
-          name = "treesitter-grammars";
-          paths = pkgs.vimPlugins.nvim-treesitter.allGrammars;
-        };
-      })
       nvim-web-devicons
       satellite-nvim
+      tiny-glimmer-nvim
 
       # From non-flake inputs
       (pkgs.vimUtils.buildVimPlugin {
@@ -82,6 +74,15 @@ inputs: {
         pname = "tiny-cmdline-nvim";
         version = "latest";
         src = inputs.plugins-tiny-cmdline;
+      })
+      # nvim-treesitter.withAllGrammars # Or ↓ (This does the same thing but doesn't pull in nvim-treesitter [archived])
+      (pkgs.vimUtils.buildVimPlugin {
+        pname = "treesitter-grammars";
+        version = "latest";
+        src = pkgs.symlinkJoin {
+          name = "treesitter-grammars";
+          paths = pkgs.vimPlugins.nvim-treesitter.allGrammars;
+        };
       })
     ];
   };

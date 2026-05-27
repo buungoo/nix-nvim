@@ -33,6 +33,7 @@ vim.o.timeout = false
 vim.o.completeopt = 'menu,preview,noselect'
 vim.o.termguicolors = true
 
+vim.g.clipboard = 'osc52'
 vim.o.clipboard = 'unnamedplus'
 
 -- Disable built-in plugins
