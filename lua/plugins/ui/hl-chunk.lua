@@ -2,7 +2,7 @@ return {
   "hlchunk.nvim",
   enabled = true,
   category = "core",
-  event = "BufReadPost",
+  event = "DeferredUIEnter", -- Any later than this and it may fail to load
   after = function()
     local c = require('plugins.ui.themes.palette')
 
