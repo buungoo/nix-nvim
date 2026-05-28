@@ -9,7 +9,7 @@ inputs: {
 
   config.settings.config_directory = ./.;
 
-  config.package = import ./package.nix { inherit pkgs; neovim-nightly = inputs.neovim-nightly; };
+  config.package = import ./nix/neovim.nix { inherit pkgs; neovim-nightly = inputs.neovim-nightly; };
 
   config.hosts.node.nvim-host.enable = false;
   config.hosts.python3.nvim-host.enable = false;
