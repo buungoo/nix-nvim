@@ -5,6 +5,7 @@ return {
   priority = 1000,
   after = function()
     require('kanagawa').setup {
+      transparent = false;
       commentStyle = { italic = true },
       keywordStyle = { italic = false },
       dimInactive = true,

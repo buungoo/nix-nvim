@@ -52,6 +52,8 @@
     fullModule = {pkgs, ...}: {
       imports = [module];
       extraPackages = with pkgs; [
+        # Containers
+        docker-language-server
         # Nix
         nixd
         alejandra
@@ -114,6 +116,7 @@
       in {
         default = pkgs.mkShell {
           packages = with pkgs; [
+            docker-language-server
             nixd
             alejandra
             lua-language-server

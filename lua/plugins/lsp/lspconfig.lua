@@ -16,7 +16,7 @@ return {
         map('<leader>rn', vim.lsp.buf.rename, 'Rename')
         map('<leader>ca', vim.lsp.buf.code_action, 'Code Action')
         map('K', vim.lsp.buf.hover, 'Hover Documentation')
-        map('<leader>ff', function() vim.lsp.buf.format({ async = true }) end, 'Format Buffer')
+        map('<leader>ff', function() require('config.format').format() end, 'Format Buffer')
       end,
     })
   end,
