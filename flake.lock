@@ -8,11 +8,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779793749,
-        "narHash": "sha256-zIx7ATI6qb9WZmJ7Z6lEB1EHe089s+qVj+9op5xRz58=",
+        "lastModified": 1780143367,
+        "narHash": "sha256-C0x+UPjlgH4a2Sh5AyVdcRR5RQ6gYPykt03U0DWCctM=",
         "owner": "Saghen",
         "repo": "blink.cmp",
-        "rev": "0593548ee0b0978abf303d30f449234e07f951d1",
+        "rev": "2d1ba63342a7fe826ca11328bebabba350222cb9",
         "type": "github"
       },
       "original": {
@@ -45,11 +45,32 @@
         ]
       },
       "locked": {
-        "lastModified": 1777670812,
-        "narHash": "sha256-3XsqX4CGj8VI5tGLWJoUiyo+u7AyNp2IO9hEwQsF1I8=",
+        "lastModified": 1779999494,
+        "narHash": "sha256-0oQfbISX+VQKPTyFm+V8kHtudDXnJoCCaMYutZ82gUw=",
         "owner": "saghen",
         "repo": "blink.lib",
-        "rev": "f29d8bac6549bc1e7d699c83f680823d7def98bd",
+        "rev": "41bc1199dd1f5f0687efbd522061b22002c2d4c5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "saghen",
+        "repo": "blink.lib",
+        "type": "github"
+      }
+    },
+    "blink-lib_2": {
+      "inputs": {
+        "nixpkgs": [
+          "blink-pairs",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1779999494,
+        "narHash": "sha256-0oQfbISX+VQKPTyFm+V8kHtudDXnJoCCaMYutZ82gUw=",
+        "owner": "saghen",
+        "repo": "blink.lib",
+        "rev": "41bc1199dd1f5f0687efbd522061b22002c2d4c5",
         "type": "github"
       },
       "original": {
@@ -60,16 +81,17 @@
     },
     "blink-pairs": {
       "inputs": {
+        "blink-lib": "blink-lib_2",
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1779823269,
-        "narHash": "sha256-6s0WrH7dn/HUex/oWmPCt/JZvV449h5edJmRKzvyAcw=",
+        "lastModified": 1780100267,
+        "narHash": "sha256-vBw7muX6+VZA/49tLcG+v3NRZltljQMxzs6vl3+R3q8=",
         "owner": "Saghen",
         "repo": "blink.pairs",
-        "rev": "9126f83dd9c14da2712d76b5b9de14d92fcc46b1",
+        "rev": "44ef9b9eb77cd5dfca471b6f7dc0ee74888626fb",
         "type": "github"
       },
       "original": {
@@ -108,11 +130,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779840270,
-        "narHash": "sha256-bXW8ErSJJD1XnPvNrGvMYAOHqpH8uaIzovK6UWTIybM=",
+        "lastModified": 1780099562,
+        "narHash": "sha256-KFqNjf3Vtext2p76V3EkBKxokCnbSPIbaZeEGy3ZDOA=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "145c6bcb4b6b34781827ca0ac8356cc5da08c098",
+        "rev": "7ca23976db3f75a1fdb825e57662efc5be889d52",
         "type": "github"
       },
       "original": {
@@ -124,11 +146,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1779837173,
-        "narHash": "sha256-JI/pXTMZA33WAlgsO7gEq23CeKIqKEyV25G5BqN7FDw=",
+        "lastModified": 1780080333,
+        "narHash": "sha256-e4v2pbrW4SORyW2Ub1cHSQiqSq+9prlUN11sHiDFT4o=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "b3dfa86e02b0ce0f3ef9bc7b90dbbd790e7da31e",
+        "rev": "e728c100b5bd4b0c6671d8eb524e15d67cacb42a",
         "type": "github"
       },
       "original": {
@@ -139,11 +161,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1779786838,
-        "narHash": "sha256-0geHoGiR5f8qiXg+gO4rSF6Up6Var+kKqiOv9AO/uUc=",
+        "lastModified": 1779877693,
+        "narHash": "sha256-NOF9NAREhxr50bbBfVcVOq+ArCMSoe8dP79Pk2uyARk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f44f7788c891fbe5542177df78374f8cdab10e8f",
+        "rev": "4100e830e085863741bc69b156ec4ccd53ab5be0",
         "type": "github"
       },
       "original": {
@@ -156,11 +178,11 @@
     "plugins-blink-lib": {
       "flake": false,
       "locked": {
-        "lastModified": 1777670812,
-        "narHash": "sha256-3XsqX4CGj8VI5tGLWJoUiyo+u7AyNp2IO9hEwQsF1I8=",
+        "lastModified": 1780099343,
+        "narHash": "sha256-+cV+LgHcPqdwr2/QWFJ5xyCNhxiLb9Zxqqc/4TRYYng=",
         "owner": "Saghen",
         "repo": "blink.lib",
-        "rev": "f29d8bac6549bc1e7d699c83f680823d7def98bd",
+        "rev": "2cb62890cee636fe46722d03b7b2331e54fb3755",
         "type": "github"
       },
       "original": {

@@ -41,7 +41,7 @@ inputs: {
       gitsigns-nvim
       hlchunk-nvim
       incline-nvim
-      # inputs.blink-pairs.packages.${pkgs.system}.blink-pairs # disabled: crates.io blocking nix fetches
+      inputs.blink-pairs.packages.${pkgs.system}.blink-pairs # disabled: crates.io blocking nix fetches
       kanagawa-nvim
       lazydev-nvim
       markdown-preview-nvim
