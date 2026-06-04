@@ -12,6 +12,7 @@ return {
 
         map('gd', function() require('fzf-lua').lsp_definitions() end, 'Go to Definition')
         map('gr', function() require('fzf-lua').lsp_references() end, 'References')
+        map('gC', function() require('fzf-lua').lsp_incoming_calls() end, 'Incoming Calls')
         map('gI', function() require('fzf-lua').lsp_implementations() end, 'Go to Implementation')
         map('<leader>rn', vim.lsp.buf.rename, 'Rename')
         map('<leader>ca', vim.lsp.buf.code_action, 'Code Action')

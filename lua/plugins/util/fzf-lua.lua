@@ -7,20 +7,6 @@ return {
     { "<leader>sF", function() require("fzf-lua").files({ cwd = vim.fn.expand("%:p:h") }) end,                                                               desc = "Find Files (current dir)" },
     { "<leader>sg", function() require("fzf-lua").live_grep({ rg_glob = true }) end,                                                                          desc = "Grep Files" },
     { "<leader>sb", function() require("fzf-lua").buffers() end,                                                                                             desc = "Find Buffers" },
-    -- {
-    --   "<leader>sd",
-    --   function()
-    --     require("fzf-lua").fzf_exec("find . -type d -not -path '*/.*'", {
-    --       prompt = "Directories> ",
-    --       actions = {
-    --         ["default"] = function(selected)
-    --           require("mini.files").open(selected[1], true)
-    --         end,
-    --       },
-    --     })
-    --   end,
-    --   desc = "Find Directory"
-    -- },
     {
       "<leader>sd",
       function()
@@ -28,13 +14,27 @@ return {
           prompt = "Directories> ",
           actions = {
             ["default"] = function(selected)
-              vim.cmd.cd(selected[1])
+              require("mini.files").open(selected[1], true)
             end,
           },
         })
       end,
-      desc = "Change Directory"
+      desc = "Find Directory"
     },
+    -- {
+    --   "<leader>sd",
+    --   function()
+    --     require("fzf-lua").fzf_exec("find . -type d -not -path '*/.*'", {
+    --       prompt = "Directories> ",
+    --       actions = {
+    --         ["default"] = function(selected)
+    --           vim.cmd.cd(selected[1])
+    --         end,
+    --       },
+    --     })
+    --   end,
+    --   desc = "Change Directory"
+    -- },
   },
   after = function()
     local c = require('plugins.ui.themes.palette')
