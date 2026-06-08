@@ -11,10 +11,10 @@
     url = "github:buungoo/blink.indent";
     flake = false;
   };
-  inputs.blink-pairs = {
-    url = "github:Saghen/blink.pairs";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
+  # inputs.blink-pairs = {
+  #   url = "github:Saghen/blink.pairs";
+  #   inputs.nixpkgs.follows = "nixpkgs";
+  # };
   inputs.plugins-blink-lib = {
     url = "github:Saghen/blink.lib";
     flake = false;

@@ -1,6 +1,6 @@
 return {
   "blink.pairs",
-  enabled = true,
+  enabled = false,
   category = "core",
   event = "InsertEnter",
   after = function()
