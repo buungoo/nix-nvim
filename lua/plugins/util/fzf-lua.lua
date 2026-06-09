@@ -50,10 +50,12 @@ return {
 
     require("fzf-lua").setup({
       fzf_bin = "sk",
-      -- skim regex mode treats '.' as metachar; force fuzzy matching
-      fzf_opts = { ["--tiebreak"] = "score", ["--regex"] = false },
+      fzf_opts = { ["--tiebreak"] = "score" },
       files = {
         hidden = true,
+        no_ignore = true,
+        -- split on / so --nth matches on filename, not full path
+        fzf_opts = { ["--delimiter"] = "/", ["--nth"] = "-1" },
         file_ignore_patterns = {
           "%.o$", "%.so$", "%.dylib$", "%.a$", "%.dll$",
           "%.exe$", "%.bin$", "%.pdf$", "%.zip$",
