@@ -43,7 +43,9 @@ return {
         menu = {
           scrollbar = false,
           border = "rounded",
-          direction_priority = { "n", "s" },
+          direction_priority = function()
+            return vim.fn.mode() == "c" and { "s", "n" } or { "n", "s" }
+          end,
           auto_show = function(ctx) return ctx.mode ~= "cmdline" end,
           draw = {
             treesitter = { "lsp" },
