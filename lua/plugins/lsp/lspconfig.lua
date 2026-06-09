@@ -18,6 +18,15 @@ return {
         map('<leader>ca', vim.lsp.buf.code_action, 'Code Action')
         map('K', vim.lsp.buf.hover, 'Hover Documentation')
         map('<leader>ff', function() require('config.format').format() end, 'Format Buffer')
+
+        local ok, miniclue = pcall(require, 'mini.clue')
+        if ok then
+          vim.list_extend(miniclue.config.clues, {
+            { mode = 'n', keys = '<Leader>r', desc = '+refactor' },
+            { mode = 'n', keys = '<Leader>c', desc = '+code' },
+            { mode = 'n', keys = '<Leader>f', desc = '+format' },
+          })
+        end
       end,
     })
   end,

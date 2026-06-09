@@ -5,7 +5,7 @@ return {
   keys = {
     { "<leader>sf", function() require("fzf-lua").files() end,                                                                                               desc = "Find Files" },
     { "<leader>sF", function() require("fzf-lua").files({ cwd = vim.fn.expand("%:p:h") }) end,                                                               desc = "Find Files (current dir)" },
-    { "<leader>sg", function() require("fzf-lua").live_grep({ rg_glob = true }) end,                                                                          desc = "Grep Files" },
+    { "<leader>sg", function() require("fzf-lua").grep({ rg_glob = true, search = "", exec_empty_query = true, fzf_opts = { ["--delimiter"] = ":", ["--nth"] = "3.." } }) end, desc = "Grep Files" },
     { "<leader>sb", function() require("fzf-lua").buffers() end,                                                                                             desc = "Find Buffers" },
     {
       "<leader>sd",
@@ -48,14 +48,21 @@ return {
     vim.api.nvim_set_hl(0, "FzfLuaFzfPointer", { fg = c.picker_match })
     vim.api.nvim_set_hl(0, "FzfLuaFzfMarker", { fg = c.picker_match })
 
+    local ok, miniclue = pcall(require, 'mini.clue')
+    if ok then
+      vim.list_extend(miniclue.config.clues, {
+        { mode = 'n', keys = '<Leader>s', desc = '+search' },
+      })
+    end
+
     require("fzf-lua").setup({
       fzf_bin = "sk",
       fzf_opts = { ["--tiebreak"] = "score" },
       files = {
         hidden = true,
         no_ignore = true,
-        -- split on / so --nth matches on filename, not full path
-        fzf_opts = { ["--delimiter"] = "/", ["--nth"] = "-1" },
+        -- weight filename matches over directory matches
+        fzf_opts = { ["--scheme"] = "path", ["--tiebreak"] = "pathname,score" },
         file_ignore_patterns = {
           "%.o$", "%.so$", "%.dylib$", "%.a$", "%.dll$",
           "%.exe$", "%.bin$", "%.pdf$", "%.zip$",

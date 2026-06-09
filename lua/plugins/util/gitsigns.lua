@@ -40,6 +40,14 @@ return {
         map('n', '<leader>gb', function() gs.blame_line { full = false } end, { desc = 'git blame line' })
         map('n', '<leader>gd', gs.diffthis, { desc = 'git diff against index' })
         map('n', '<leader>gtb', gs.toggle_current_line_blame, { desc = 'toggle git blame line' })
+
+        local ok, miniclue = pcall(require, 'mini.clue')
+        if ok then
+          vim.list_extend(miniclue.config.clues, {
+            { mode = 'n', keys = '<Leader>g', desc = '+git' },
+            { mode = 'n', keys = '<Leader>gt', desc = '+toggle' },
+          })
+        end
       end,
     })
   end,
