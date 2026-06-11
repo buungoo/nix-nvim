@@ -79,8 +79,8 @@ inputs: {
     ];
   };
 
-  config.extraPackages = with pkgs; [
-    ripgrep
-    skim
+  config.extraPackages = [
+    pkgs.ripgrep
+    (import ./nix/skim.nix { inherit pkgs; })
   ];
 }

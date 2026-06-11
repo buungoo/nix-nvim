@@ -61,8 +61,7 @@ return {
       files = {
         hidden = true,
         no_ignore = true,
-        -- weight filename matches over directory matches
-        fzf_opts = { ["--tiebreak"] = "pathname,score" },
+        fzf_opts = { ["--scheme"] = "path", ["--regex"] = false },
         file_ignore_patterns = {
           "%.o$", "%.so$", "%.dylib$", "%.a$", "%.dll$",
           "%.exe$", "%.bin$", "%.pdf$", "%.zip$",
