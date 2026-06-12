@@ -6,6 +6,8 @@ pkgs.skim.overrideAttrs (old: {
   postPatch =
     (old.postPatch or "")
     + ''
+      # --- arinae algorithm ---
+
       # Add basename bonus constant
       sed -i '/pub(super) const TYPO_PENALTY/i\
       /// Bonus added to every character position after the last path separator.\
@@ -22,5 +24,30 @@ pkgs.skim.overrideAttrs (old: {
       \        }\
       \    }' \
         src/fuzzy_matcher/arinae/mod.rs
+
+      # --- fzy algorithm ---
+
+      # Add basename bonus constant
+      sed -i '/const SCORE_TYPO/i\
+      const PATH_BASENAME_BONUS: i64 = 50;' \
+        src/fuzzy_matcher/fzy.rs
+
+      # Boost all positions after the last '/' in precompute_bonus
+      sed -i '/let mut bonuses = Vec::with_capacity/,/^}/c\
+      \    let mut bonuses = Vec::with_capacity(haystack.len());\
+      \    let mut prev = '"'"'/'"'"';\
+      \    for \&ch in haystack {\
+      \        bonuses.push(compute_bonus(prev, ch));\
+      \        prev = ch;\
+      \    }\
+      \    // Boost filename positions (after last path separator)\
+      \    if let Some(pos) = haystack.iter().rposition(|c| *c == '"'"'/'"'"') {\
+      \        for b in bonuses[pos + 1..].iter_mut() {\
+      \            *b += PATH_BASENAME_BONUS;\
+      \        }\
+      \    }\
+      \    bonuses\
+      \}' \
+        src/fuzzy_matcher/fzy.rs
     '';
 })

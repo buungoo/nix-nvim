@@ -75,7 +75,23 @@ inputs: {
         version = "latest";
         src = inputs.plugins-tiny-cmdline;
       })
-      pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+      (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: with plugins; [
+        # Parsers used by this config's configured filetypes/plugins.
+        c
+        cpp
+        c_sharp
+        javascript
+        lua
+        markdown
+        markdown_inline
+        nix
+        objc
+        python
+        rust
+        tsx
+        typescript
+        yaml
+      ]))
     ];
   };
 
