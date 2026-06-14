@@ -20,7 +20,7 @@ pkgs.skim.overrideAttrs (old: {
       \    // Boost filename positions (after last path separator)\
       \    if let Some(pos) = cho.iter().rposition(|c| { let ch: char = (*c).into(); ch == '"'"'/'"'"' }) {\
       \        for b in buf[pos + 1..].iter_mut() {\
-      \            *b = b.saturating_add(PATH_BASENAME_BONUS);\
+      \            *b = b.saturating_add(constants::PATH_BASENAME_BONUS);\
       \        }\
       \    }' \
         src/fuzzy_matcher/arinae/mod.rs

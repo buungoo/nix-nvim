@@ -1,6 +1,6 @@
 # Override neovim nightly to show startup time in the intro screen
 { pkgs, neovim-nightly }:
-(neovim-nightly.packages.${pkgs.system}.default).overrideAttrs (old: {
+(neovim-nightly.packages.${pkgs.stdenv.hostPlatform.system}.default).overrideAttrs (old: {
   doCheck = false;
   postPatch =
     (old.postPatch or "")

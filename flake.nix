@@ -51,7 +51,7 @@
     wrapper = wrappers.lib.evalModule module;
     fullModule = {pkgs, ...}: {
       imports = [module];
-      extraPackages = with pkgs; [
+      runtimePkgs = with pkgs; [
         # Containers
         docker-language-server
 
