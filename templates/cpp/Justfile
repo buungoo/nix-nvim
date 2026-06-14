@@ -1,0 +1,7 @@
+set positional-arguments
+
+default:
+    @just --list
+
+format:
+    find . -type f \( -name '*.c' -o -name '*.cc' -o -name '*.cpp' -o -name '*.cxx' -o -name '*.h' -o -name '*.hh' -o -name '*.hpp' -o -name '*.hxx' \) -exec clang-format -i {} +

@@ -12,7 +12,10 @@
       in {
         default = pkgs.mkShell {
           packages = with pkgs; [
+            just
+            just-lsp
             lua-language-server
+            stylua
           ];
         };
       }

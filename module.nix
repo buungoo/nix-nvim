@@ -80,7 +80,9 @@ inputs: {
         c
         cpp
         c_sharp
+        glsl
         javascript
+        just
         lua
         markdown
         markdown_inline
@@ -97,6 +99,8 @@ inputs: {
 
   config.extraPackages = [
     pkgs.ripgrep
+    pkgs.glsl_analyzer
+    pkgs.just-lsp
     (import ./nix/skim.nix { inherit pkgs; })
   ];
 }

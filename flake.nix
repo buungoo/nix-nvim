@@ -54,22 +54,36 @@
       extraPackages = with pkgs; [
         # Containers
         docker-language-server
+
+        # Just
+        just
+        just-lsp
+
         # Nix
         nixd
         alejandra
+
         # Lua
         lua-language-server
         stylua
+
         # C/C++
         clang-tools
+
+        # GLSL
+        glsl_analyzer
+
         # C#
         roslyn-ls
+
         # JS/TS
         typescript-language-server
         prettier
+
         # Python
         pyrefly
         ruff
+
         # Rust
         rust-analyzer
       ];
@@ -110,16 +124,19 @@
       neovim = self.nixosModules.neovim;
     };
 
+    # For development of this package
     devShells = forAllSystems (
       system: let
         pkgs = import nixpkgs {inherit system;};
       in {
         default = pkgs.mkShell {
           packages = with pkgs; [
-            docker-language-server
-            nixd
+            just
+            just-lsp
             alejandra
             lua-language-server
+            nixd
+            stylua
           ];
         };
       }
@@ -153,6 +170,10 @@
       rust = {
         path = ./templates/rust;
         description = "Rust dev shell with rust-analyzer";
+      };
+      glsl = {
+        path = ./templates/glsl;
+        description = "GLSL dev shell with glsl_analyzer and glslang";
       };
     };
   };

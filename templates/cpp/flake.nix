@@ -12,6 +12,8 @@
       in {
         default = pkgs.mkShell {
           packages = with pkgs; [
+            just
+            just-lsp
             clang-tools # clangd + clang-format
             cmake
             gnumake

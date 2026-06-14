@@ -1,5 +1,5 @@
 {
-  description = "Nix development shell";
+  description = "GLSL development shell";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
@@ -14,8 +14,8 @@
           packages = with pkgs; [
             just
             just-lsp
-            nixd
-            alejandra
+            glsl_analyzer
+            glslang
           ];
         };
       }
