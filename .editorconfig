@@ -3,3 +3,11 @@ root = true
 [Justfile]
 indent_style = space
 indent_size = 3
+
+[*.lua]
+indent_style = space
+indent_size = 3
+
+[*.nix]
+indent_style = space
+indent_size = 2

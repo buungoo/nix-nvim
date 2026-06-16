@@ -1,0 +1,10 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+  "diagnostics.globals": ["nixInfo", "vim"],
+  "diagnostics.disable": ["missing-fields"],
+  "format.enable": false,
+  "format.defaultConfig": {
+    "indent_style": "space",
+    "indent_size": "3"
+  }
+}
