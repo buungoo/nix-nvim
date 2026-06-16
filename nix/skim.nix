@@ -1,6 +1,6 @@
 # Override skim to add path-aware scoring: boost match positions in the
 # filename (after the last '/') so filename matches rank above directory matches.
-{ pkgs }:
+{pkgs}:
 pkgs.skim.overrideAttrs (old: {
   doCheck = false;
   postPatch =
@@ -17,11 +17,10 @@ pkgs.skim.overrideAttrs (old: {
 
       # Boost all positions after the last '/' in precompute_bonuses
       sed -i '/buf\.extend(bonus_iter);/a\
-      \    // Boost filename positions (after last path separator)\
-      \    if let Some(pos) = cho.iter().rposition(|c| { let ch: char = (*c).into(); ch == '"'"'/'"'"' }) {\
-      \        for b in buf[pos + 1..].iter_mut() {\
-      \            *b = b.saturating_add(constants::PATH_BASENAME_BONUS);\
-      \        }\
+      \    // Boost filename positions (after last path separator, or all if no separator)\
+      \    let start = cho.iter().rposition(|c| { let ch: char = (*c).into(); ch == '"'"'/'"'"' }).map_or(0, |p| p + 1);\
+      \    for b in buf[start..].iter_mut() {\
+      \        *b = b.saturating_add(constants::PATH_BASENAME_BONUS);\
       \    }' \
         src/fuzzy_matcher/arinae/mod.rs
 
@@ -40,11 +39,10 @@ pkgs.skim.overrideAttrs (old: {
       \        bonuses.push(compute_bonus(prev, ch));\
       \        prev = ch;\
       \    }\
-      \    // Boost filename positions (after last path separator)\
-      \    if let Some(pos) = haystack.iter().rposition(|c| *c == '"'"'/'"'"') {\
-      \        for b in bonuses[pos + 1..].iter_mut() {\
-      \            *b += PATH_BASENAME_BONUS;\
-      \        }\
+      \    // Boost filename positions (after last path separator, or all if no separator)\
+      \    let start = haystack.iter().rposition(|c| *c == '"'"'/'"'"').map_or(0, |p| p + 1);\
+      \    for b in bonuses[start..].iter_mut() {\
+      \        *b += PATH_BASENAME_BONUS;\
       \    }\
       \    bonuses\
       \}' \

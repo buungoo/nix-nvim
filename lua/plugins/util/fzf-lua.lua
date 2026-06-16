@@ -61,11 +61,12 @@ return {
       files = {
         hidden = true,
         no_ignore = true,
-        fzf_opts = { ["--scheme"] = "path", ["--algo"] = "fzy" },
+        fzf_opts = { ["--algo"] = "fzy" },
         file_ignore_patterns = {
           "%.o$", "%.so$", "%.dylib$", "%.a$", "%.dll$",
           "%.exe$", "%.bin$", "%.pdf$", "%.zip$",
           "%.tar$", "%.gz$", "%.cache$",
+          "%.aip$", "%.pak$", "%.ttf$", "%.nrproj$", "%.pdb$", "%.Up2Date$",
           "/%.git/", "/node_modules/",
         },
       },
