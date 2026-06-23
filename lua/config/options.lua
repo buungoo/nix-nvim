@@ -31,6 +31,7 @@ vim.o.updatetime = 250
 vim.o.timeout = false
 vim.o.completeopt = 'menu,preview,noselect'
 vim.o.termguicolors = true
+vim.o.virtualedit = 'block'
 
 vim.g.clipboard = 'osc52'
 vim.o.clipboard = 'unnamedplus'
