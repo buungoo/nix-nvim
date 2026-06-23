@@ -21,7 +21,6 @@ vim.o.shiftwidth = 3
 
 vim.o.breakindent = true
 vim.o.wrap = false
-vim.o.undofile = true
 
 vim.o.ignorecase = true
 vim.o.smartcase = true
