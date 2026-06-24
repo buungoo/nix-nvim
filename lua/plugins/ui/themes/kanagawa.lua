@@ -56,5 +56,9 @@ return {
     c.mode_visual = p.waveAqua2
     c.mode_vline = p.waveAqua1
     c.mode_replace = p.autumnRed
+    c.pairs_1 = p.lotusViolet2 -- p.lotusYellow3
+    c.pairs_2 = p.lotusPink -- p.lotusGreen2
+    c.pairs_3 = p.lotusAqua2 -- p.dragonOrange2
+    c.pairs_unmatched = p.autumnRed
   end,
 }
