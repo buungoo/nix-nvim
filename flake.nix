@@ -31,6 +31,10 @@
     url = "github:rachartier/tiny-cmdline.nvim";
     flake = false;
   };
+  inputs.smart-paste = {
+    url = "github:nemanjamalesija/smart-paste.nvim";
+    flake = false;
+  };
   inputs.neovim-nightly = {
     url = "github:nix-community/neovim-nightly-overlay";
     inputs.nixpkgs.follows = "nixpkgs";

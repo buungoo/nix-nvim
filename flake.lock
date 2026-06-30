@@ -250,7 +250,24 @@
         "plugins-line-number-change-mode": "plugins-line-number-change-mode",
         "plugins-nvim-window": "plugins-nvim-window",
         "plugins-tiny-cmdline": "plugins-tiny-cmdline",
+        "smart-paste": "smart-paste",
         "wrappers": "wrappers"
+      }
+    },
+    "smart-paste": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777903841,
+        "narHash": "sha256-aJIiei3YCFKKD9KzytifOjO+KIhhL5EFdfVkpAv2hJc=",
+        "owner": "nemanjamalesija",
+        "repo": "smart-paste.nvim",
+        "rev": "7a461d3d83a6bee199d3f1c0b177f7f3e22fa371",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nemanjamalesija",
+        "repo": "smart-paste.nvim",
+        "type": "github"
       }
     },
     "wrappers": {

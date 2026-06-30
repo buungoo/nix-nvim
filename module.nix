@@ -75,6 +75,11 @@ inputs: {
         version = "latest";
         src = inputs.plugins-tiny-cmdline;
       })
+      (pkgs.vimUtils.buildVimPlugin {
+        pname = "smart-paste";
+        version = "latest";
+        src = inputs.smart-paste;
+      })
       (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: with plugins; [
         # Parsers used by this config's configured filetypes/plugins.
         c
