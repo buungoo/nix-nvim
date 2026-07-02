@@ -41,16 +41,18 @@ inputs: {
       gitsigns-nvim
       hlchunk-nvim
       incline-nvim
-      inputs.blink-pairs.packages.${pkgs.stdenv.hostPlatform.system}.blink-pairs # disabled: crates.io blocking nix fetches
+      inputs.blink-pairs.packages.${pkgs.stdenv.hostPlatform.system}.blink-pairs
       kanagawa-nvim
       lazydev-nvim
       markdown-preview-nvim
       mini-clue
       mini-files
       mini-statusline
+      neogit
       nvim-lspconfig
       nvim-surround
       nvim-web-devicons
+      roslyn-nvim
       satellite-nvim
       tiny-glimmer-nvim
 
