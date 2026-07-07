@@ -10,6 +10,18 @@ return {
     local devicons = require('nvim-web-devicons')
     local navic = require('nvim-navic')
 
+    -- Only surface the symbols that answer "am I inside a class/method?".
+    -- Namespaces, properties, fields, locals, etc. are just noise here.
+    local show_kind = {
+      Class = true,
+      Struct = true,
+      Interface = true,
+      Enum = true,
+      Method = true,
+      Function = true,
+      Constructor = true,
+    }
+
     -- navic tracks the cursor's LSP symbol path (class > method > ...), which we
     -- append to the incline winbar below. setup() also registers the
     -- NavicIcons*/NavicText/NavicSeparator highlight groups used when rendering.
@@ -53,11 +65,14 @@ return {
         -- Only the focused window has a meaningful cursor symbol path.
         if props.focused then
           for _, item in ipairs(navic.get_data(props.buf) or {}) do
-            res[#res + 1] = {
-              { ' › ', group = 'NavicSeparator' },
-              { item.icon, group = 'NavicIcons' .. item.type },
-              { item.name, group = 'NavicText' },
-            }
+            if show_kind[item.type] then
+              local name = vim.trim(item.name:match('^[^(]+') or item.name)
+              res[#res + 1] = {
+                { ' › ', group = 'NavicSeparator' },
+                { item.icon, group = 'NavicIcons' .. item.type },
+                { name, group = 'NavicText' },
+              }
+            end
           end
         end
         res[#res + 1] = ' '
