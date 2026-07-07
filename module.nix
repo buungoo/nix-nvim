@@ -49,6 +49,7 @@ inputs: {
       mini-files
       mini-statusline
       neogit
+      nvim-navic
       nvim-lspconfig
       nvim-surround
       nvim-web-devicons
