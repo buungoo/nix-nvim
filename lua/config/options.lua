@@ -33,8 +33,11 @@ vim.o.completeopt = 'menu,preview,noselect'
 vim.o.termguicolors = true
 vim.o.virtualedit = 'block'
 
-vim.g.clipboard = 'osc52'
-vim.o.clipboard = 'unnamedplus'
+-- Only works in terminal emulators (TERM=linux cant interpret it)
+if vim.env.TERM ~= 'linux' then
+   vim.g.clipboard = 'osc52'
+   vim.o.clipboard = 'unnamedplus'
+end
 
 -- Disable built-in plugins
 vim.g.loaded_netrw = 1
