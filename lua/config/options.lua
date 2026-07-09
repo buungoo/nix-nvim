@@ -39,6 +39,9 @@ if vim.env.TERM ~= 'linux' then
    vim.o.clipboard = 'unnamedplus'
 end
 
+-- Allow project-local config (.nvim.lua in cwd), trusted via vim.secure
+vim.o.exrc = true
+
 -- Disable built-in plugins
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
