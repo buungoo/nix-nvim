@@ -5,7 +5,10 @@ return {
   keys = {
     { "<leader>sf", function() require("fzf-lua").files() end,                                                                                               desc = "Find Files" },
     { "<leader>sF", function() require("fzf-lua").files({ cwd = vim.fn.expand("%:p:h") }) end,                                                               desc = "Find Files (current dir)" },
-    { "<leader>sg", function() require("fzf-lua").grep({ rg_glob = true, search = "", exec_empty_query = true, fzf_opts = { ["--delimiter"] = ":", ["--nth"] = "3.." } }) end, desc = "Grep Files" },
+    -- query_delay debounces rg, --min-query-length gates it until 2+ chars:
+    -- skim drives live_grep via `--interactive --cmd` and drains rg's output on
+    -- its UI thread, so an empty/1-char query greps the whole repo and freezes it.
+    { "<leader>sg", function() require("fzf-lua").grep({ rg_glob = true, search = "", query_delay = 100, fzf_opts = { ["--delimiter"] = ":", ["--nth"] = "3..", ["--min-query-length"] = "2" } }) end, desc = "Grep Files" },
     { "<leader>sb", function() require("fzf-lua").buffers() end,                                                                                             desc = "Find Buffers" },
     {
       "<leader>sd",
