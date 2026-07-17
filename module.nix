@@ -85,6 +85,7 @@ inputs: {
       })
       (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: with plugins; [
         # Parsers used by this config's configured filetypes/plugins.
+        bash
         c
         cpp
         c_sharp
@@ -96,6 +97,7 @@ inputs: {
         markdown_inline
         nix
         objc
+        powershell
         python
         rust
         tsx
