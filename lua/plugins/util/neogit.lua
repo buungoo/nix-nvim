@@ -7,12 +7,13 @@ return {
       { '<leader>gg', '<cmd>Neogit<cr>', desc = 'Show Neogit UI' },
    },
    before = function()
-      require('lze').trigger_load('fzf-lua')
+      require('lze').trigger_load('mini.pick')
    end,
    after = function()
       require('neogit').setup({
          integrations = {
-            fzf_lua = true,
+            mini_pick = true,
+            fzf_lua = false,
          },
       })
    end,

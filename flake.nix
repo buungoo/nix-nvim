@@ -24,7 +24,7 @@
     flake = false;
   };
   inputs.plugins-nvim-window = {
-    url = "gitlab:yorickpeterse/nvim-window";
+    url = "github:yorickpeterse/nvim-window";
     flake = false;
   };
   inputs.plugins-tiny-cmdline = {
@@ -33,6 +33,10 @@
   };
   inputs.smart-paste = {
     url = "github:nemanjamalesija/smart-paste.nvim";
+    flake = false;
+  };
+  inputs.nucleo = {
+    url = "git+https://git.tobydavis.dev/tobydavis/nucleo.nvim.git";
     flake = false;
   };
   inputs.neovim-nightly = {

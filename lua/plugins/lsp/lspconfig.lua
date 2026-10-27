@@ -10,10 +10,10 @@ return {
           vim.keymap.set('n', key, fn, { buffer = buf, desc = 'LSP: ' .. desc })
         end
 
-        map('gd', function() require('fzf-lua').lsp_definitions() end, 'Go to Definition')
-        map('gr', function() require('fzf-lua').lsp_references() end, 'References')
-        map('gC', function() require('fzf-lua').lsp_incoming_calls() end, 'Incoming Calls')
-        map('gI', function() require('fzf-lua').lsp_implementations() end, 'Go to Implementation')
+        map('gd', function() require('config.picker').lsp('definition') end, 'Go to Definition')
+        map('gr', function() require('config.picker').lsp('references') end, 'References')
+        map('gC', function() require('config.picker').incoming_calls() end, 'Incoming Calls')
+        map('gI', function() require('config.picker').lsp('implementation') end, 'Go to Implementation')
         map('<leader>rn', vim.lsp.buf.rename, 'Rename')
         map('<leader>ca', vim.lsp.buf.code_action, 'Code Action')
         map('K', vim.lsp.buf.hover, 'Hover Documentation')

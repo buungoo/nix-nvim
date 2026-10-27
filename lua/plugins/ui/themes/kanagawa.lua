@@ -31,6 +31,12 @@ return {
           BlinkCmpDocBorder = { fg = t.ui.bg_p2, bg = "none" },
           BlinkCmpSignatureHelpBorder = { fg = t.ui.bg_p2, bg = "none" },
 
+          -- Match quality: yellow, blue, green, then rose.
+          NucleoMatchPerfect = { fg = p.carpYellow, bold = true },
+          NucleoMatchStrong = { fg = p.crystalBlue, bold = true },
+          NucleoMatch = { fg = p.springGreen },
+          NucleoMatchWeak = { fg = p.sakuraPink },
+
           CursorLineNr = { fg = p.sakuraPink, bg = "NONE" },
         }
       end,

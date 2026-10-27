@@ -1,9 +1,7 @@
 return {
   "mini.clue",
   category = "core",
-  keys = {
-    { "<leader>", mode = { "n", "x" } },
-  },
+  lazy = false,
   after = function()
     local miniclue = require('mini.clue')
     miniclue.setup({
@@ -18,6 +16,7 @@ return {
       },
       window = {
         delay = 300,
+        config = { border = 'rounded' },
       },
     })
   end,

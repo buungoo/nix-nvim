@@ -1,0 +1,33 @@
+diff --git a/src/lua.rs b/src/lua.rs
+--- a/src/lua.rs
++++ b/src/lua.rs
+@@ -15,3 +15,8 @@
+-fn lossy(strings: &[LuaString]) -> Vec<String> {
+-    strings.iter().map(LuaString::to_string_lossy).collect()
++// Convert one string at a time instead of retaining a Lua reference per item.
++// Large Vec<LuaString> inputs otherwise exhaust LuaJIT's auxiliary stack.
++fn lossy(strings: LuaTable) -> LuaResult<Vec<String>> {
++    strings
++        .sequence_values::<LuaString>()
++        .map(|string| string.map(|string| string.to_string_lossy()))
++        .collect()
+ }
+@@ -19,7 +24,7 @@
+ fn filter(
+     _: &Lua,
+-    (items, query): (Vec<LuaString>, String),
++    (items, query): (LuaTable, String),
+ ) -> LuaResult<Vec<usize>> {
+-    let indices = matching::filter(&lossy(&items), &query);
++    let indices = matching::filter(&lossy(items)?, &query);
+     Ok(indices.into_iter().map(|i| i + 1).collect())
+ }
+@@ -27,6 +32,6 @@
+ fn highlights(
+     _: &Lua,
+-    (lines, query): (Vec<LuaString>, String),
++    (lines, query): (LuaTable, String),
+ ) -> LuaResult<Vec<Highlight>> {
+-    Ok(matching::highlights(&lossy(&lines), &query))
++    Ok(matching::highlights(&lossy(lines)?, &query))
+ }

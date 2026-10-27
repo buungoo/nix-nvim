@@ -10,7 +10,7 @@ return {
       chars = { 'j', 'f', 'k', 'd', 'l', 's', 'ö', 'a', },
       normal_hl = 'Normal',
       hint_hl = 'Bold',
-      border = 'single',
+      border = 'rounded',
       render = 'float',
     }
   end,
