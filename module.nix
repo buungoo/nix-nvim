@@ -32,6 +32,7 @@ inputs: {
   config.specs.core = {
     lazy = true;
     data = with pkgs.vimPlugins; [
+      aerial-nvim
       # Keep Blink V2, but skip its expensive release-mode Rust test build.
       (inputs.blink-cmp.packages.${pkgs.stdenv.hostPlatform.system}.blink-cmp.overrideAttrs (old: {
         env = old.env // {

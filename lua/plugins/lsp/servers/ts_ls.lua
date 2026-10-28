@@ -4,7 +4,10 @@ return {
   ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
   after = function()
     vim.lsp.config('ts_ls', {})
-    vim.lsp.enable('ts_ls')
+    require('config.lsp').enable('ts_ls', function(root)
+      return vim.fn.executable('typescript-language-server') == 1
+        or vim.fn.executable(vim.fs.joinpath(root, 'node_modules/.bin/typescript-language-server')) == 1
+    end)
 
     -- ts_ls doesn't support external formatters, so we use conform.nvim instead.
     -- Multiple formatters can be listed per filetype — conform uses the first one

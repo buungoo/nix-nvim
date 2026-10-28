@@ -27,7 +27,7 @@ return {
         return ft
       end,
     })
-    vim.lsp.enable("docker_compose_language_service")
+    require("config.lsp").enable("docker_compose_language_service")
 
     require("config.format").register_conform("yaml.docker-compose", { "prettier" })
   end,

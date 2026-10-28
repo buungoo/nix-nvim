@@ -12,6 +12,11 @@ return {
       hint_hl = 'Bold',
       border = 'rounded',
       render = 'float',
+      close_window = function(win, conf)
+        -- Keep ui2's internal windows intact, even when they are hidden.
+        return conf.relative ~= 'laststatus'
+          and vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= 'aerial'
+      end,
     }
   end,
 }

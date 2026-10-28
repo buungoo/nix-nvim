@@ -10,6 +10,6 @@ return {
         },
       },
     })
-    vim.lsp.enable('nixd')
+    require('config.lsp').enable('nixd')
   end,
 }

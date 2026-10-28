@@ -4,6 +4,6 @@ return {
   ft = { "glsl", "vert", "tesc", "tese", "frag", "geom", "comp" },
   after = function()
     vim.lsp.config("glsl_analyzer", {})
-    vim.lsp.enable("glsl_analyzer")
+    require("config.lsp").enable("glsl_analyzer")
   end,
 }

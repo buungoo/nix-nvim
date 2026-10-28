@@ -20,7 +20,7 @@ return {
             },
          },
       })
-      vim.lsp.enable("lua_ls")
+      require("config.lsp").enable("lua_ls")
 
       require("config.format").register_conform("lua", { "stylua" })
    end,

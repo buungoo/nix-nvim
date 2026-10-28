@@ -4,6 +4,6 @@ return {
   ft = { "c", "cpp", "objc", "objcpp" },
   after = function()
     vim.lsp.config('clangd', {})
-    vim.lsp.enable('clangd')
+    require('config.lsp').enable('clangd')
   end,
 }

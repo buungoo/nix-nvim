@@ -32,6 +32,6 @@ return {
         })
       end,
     })
-    vim.lsp.enable("just")
+    require("config.lsp").enable("just")
   end,
 }
