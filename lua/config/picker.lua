@@ -243,7 +243,7 @@ function M.files(cwd)
     '*.nrproj', '*.pdb', '*.Up2Date', '.git', 'node_modules',
   }
   for _, glob in ipairs(exclusions) do vim.list_extend(command, { '--glob', '!' .. glob }) end
-  return require('mini.pick').builtin.cli({ command = command }, { source = { name = 'Files', cwd = cwd } })
+  return require('config.picker_files').start(command, cwd)
 end
 
 function M.directories()
